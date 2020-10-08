@@ -15,13 +15,13 @@
             <div class="form-group">
           <label  for="titulo">Título:</label>
           <input type="text" class="form-control" id="titulo" placeholder="Digite aqui o seu titulo"
-          [(ngModel)]='postagem.titulo'>
+          >
         </div>
   
         <div class="form-group">
             <label for="texto">Texto:</label>
             <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui o seu texto"
-            [(ngModel)]='postagem.texto'></textarea>
+            [(ngModel)]='postagem.descricao'></textarea>
         </div>
   
         <div class="row d-flex align-items-end">
@@ -76,7 +76,7 @@
                   <div class="card-header">
                       <div class="row d-flex align-items-center">
                           <div class="col-md-8">
-                              <h5 class="card-title">{{item.titulo}} </h5>
+                              <h5 class="card-title"></h5>
                               <small>  {{item.tema.descricao}} </small>
                           </div>
                           <div class="col-md-4 d-flex justify-content-end">
@@ -94,7 +94,7 @@
                   </div>
   
                   <div class="card-body" >
-                    <p class="card-text" aria-describedby="texto"> {{item.texto}}  </p>
+                    <p class="card-text" aria-describedby="texto"> {{item.descricao}}  </p>
                     <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
                       Postado em: {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}} </small>
                   </div>
@@ -131,7 +131,7 @@
                   </div>
   
                   <div class="card-body" *ngFor="let item of listaPostagens | orderBy : key : reverse">
-                    <p class="card-text" aria-describedby="texto"> {{item.texto}} </p>
+                    <p class="card-text" aria-describedby="texto"> {{item.descricao}} </p>
                     <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
                       Postado em: {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
                   </div>
